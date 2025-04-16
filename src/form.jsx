@@ -28,7 +28,7 @@ export function SubscriberForm() {
       </Form.Field>
 
       <Form.Field>
-        <Form.Label>Email</Form.Label>
+        <Form.Label>Phone Number</Form.Label>
         <Form.Control>
           <Form.Input color="danger" name="email" />
           <Icon align="left" size="small">
