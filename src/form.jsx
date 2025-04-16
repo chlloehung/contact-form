@@ -15,7 +15,7 @@ export function SubscriberForm() {
       }}
     >
       <Form.Field>
-        <Form.Label>Username</Form.Label>
+        <Form.Label>Full Name</Form.Label>
         <Form.Control>
           <Form.Input color="success" name="username" />
           <Icon align="left" size="small">
@@ -42,7 +42,7 @@ export function SubscriberForm() {
       </Form.Field>
 
       <Form.Field>
-        <Form.Label>Message</Form.Label>
+        <Form.Label>Order Details</Form.Label>
         <Form.Textarea
           name="message"
           placeholder="Type your message here..."
