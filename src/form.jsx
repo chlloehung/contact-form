@@ -1,20 +1,23 @@
+import React, { useState } from 'react';
 import 'bulma/css/bulma.min.css';
 import { Form, Icon, Button } from 'react-bulma-components';
 
 export function SubscriberForm() {
-    return <form onSubmit={event => {
+  const [message, setMessage] = useState('');
+
+  return (
+    <form
+      onSubmit={(event) => {
         event.preventDefault();
         const formData = new FormData(event.target);
         const formObject = Object.fromEntries(formData.entries());
         console.log(formObject);
-    }}>
+      }}
+    >
       <Form.Field>
         <Form.Label>Username</Form.Label>
         <Form.Control>
-          <Form.Input
-            color="success"
-            name="username"
-          />
+          <Form.Input color="success" name="username" />
           <Icon align="left" size="small">
             <i className="fas fa-user" />
           </Icon>
@@ -28,10 +31,7 @@ export function SubscriberForm() {
       <Form.Field>
         <Form.Label>Email</Form.Label>
         <Form.Control>
-          <Form.Input
-            color="danger"
-            name="email"
-          />
+          <Form.Input color="danger" name="email" />
           <Icon align="left" size="small">
             <i className="fas fa-envelope" />
           </Icon>
@@ -39,15 +39,14 @@ export function SubscriberForm() {
             <i className="fas fa-exclamation-triangle" />
           </Icon>
         </Form.Control>
+        <Form.Help color="danger">This email is invalid</Form.Help>
       </Form.Field>
 
       <Form.Field>
         <Form.Label>Subject</Form.Label>
         <Form.Field kind="group">
           <Form.Control>
-            <Form.Select
-              name="subject"
-            >
+            <Form.Select name="subject">
               <option value="select-dropdown">Select dropdown</option>
               <option value="with-options">With options</option>
             </Form.Select>
@@ -56,6 +55,16 @@ export function SubscriberForm() {
             <Form.Input placeholder="With loading state" />
           </Form.Control>
         </Form.Field>
+      </Form.Field>
+
+      <Form.Field>
+        <Form.Label>Message</Form.Label>
+        <Form.Textarea
+          name="message"
+          placeholder="Type your message here..."
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+        />
       </Form.Field>
 
       <Form.Field kind="group">
@@ -68,6 +77,6 @@ export function SubscriberForm() {
           </Button>
         </Form.Control>
       </Form.Field>
-
     </form>
+  );
 }
