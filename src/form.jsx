@@ -44,7 +44,7 @@ export function SubscriberForm() {
         <Form.Label>Order Details</Form.Label>
         <Form.Textarea
           name="message"
-          placeholder="Type your message here..."
+          placeholder="Type your order here..."
           value={message}
           onChange={(e) => setMessage(e.target.value)}
         />
